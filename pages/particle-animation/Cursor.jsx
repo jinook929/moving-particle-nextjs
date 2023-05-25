@@ -67,6 +67,10 @@ const Cursor = ({ changeSlide }) => {
         navigator.msMaxTouchPoints > 0
     );
 
+    const isTouch =  "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0;
+
     const vhDevices = () => {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -83,16 +87,12 @@ const Cursor = ({ changeSlide }) => {
         }, 10);
       });
 
-    const setCursor = () => {
-      new CursorComponent(isTouchDevices);
-    };
-
     (async () => {
       await utils();
-      setCursor();
+      new CursorComponent(isTouch);
     })();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isTouchDevices]);  
 
   return (
     <Container>
@@ -152,13 +152,8 @@ class CursorComponent {
   }
 
   updateCoordinates(e) {
-    if (e.type.match("touch")) {
-      this.mouse.x = e.touches[0].clientX;
-      this.mouse.y = e.touches[0].clientY;
-    } else {
-      this.mouse.x = e.clientX;
-      this.mouse.y = e.clientY;
-    }
+    this.mouse.x = e.type.match("mouse") ? e.clientX : e.touches[0].clientX;
+    this.mouse.y = e.type.match("mouse") ? e.clientY : e.touches[0].clientY;
   }
 
   setParamsDiffs() {
