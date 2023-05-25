@@ -122,8 +122,8 @@ class CursorComponent {
       bottom: 74.6953125,
       left: 613.3125,
     };
-    this.xStart = this.boundsLinks.left + this.boundsLinks.width / 2;
-    this.yStart = this.boundsLinks.top + this.boundsLinks.height / 2;
+    this.xStart = isTouchDevices ? 50 : this.boundsLinks.left  * 1.5 + this.boundsLinks.width;
+    this.yStart = isTouchDevices ? 50 : this.boundsLinks.top  * 1.5 + this.boundsLinks.height;
     this.mouse = { x: this.xStart, y: this.yStart };
     this.pos = { x: this.xStart, y: this.yStart };
     this.diff = { x: null, y: null };
