@@ -13,7 +13,8 @@ const Container = styled.div`
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #fa6a74;
+  background-color: #e68805;
+  /* background-color: #fa6a74; */
 `;
 
 const Title = styled.h2`
@@ -54,7 +55,8 @@ const Title = styled.h2`
 `;
 
 const Animation = styled.div`
-  background-color: #fa6a74;
+  background-color: #e68805;
+  /* background-color: #fa6a74; */
 `;
 
 const Cursor = ({ changeSlide }) => {
@@ -365,8 +367,10 @@ class CursorComponent {
     this.idGradient = "gradient";
     this.fillParticles = `url('#${this.idGradient}')`;
     this.gradientParticles = {
-      color1: "#51080C",
-      color2: "#FA6A74",
+      color1: "#bf4508",
+      color2: "#e68805",
+      // color1: "#51080C",
+      // color2: "#FA6A74",
     };
   }
 
