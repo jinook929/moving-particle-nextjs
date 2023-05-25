@@ -33,7 +33,7 @@ const Title = styled.h2`
 
   a {
     color: black;
-    text-shadow: 5px 5px 5px rgba(100, 100, 100, 0.5);
+    text-shadow: 3px 3px 3px rgba(100, 100, 100, 0.5);
   }
 
   @media only screen and (max-width: 768px) {
