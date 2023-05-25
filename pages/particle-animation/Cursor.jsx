@@ -14,7 +14,6 @@ const Container = styled.div`
   padding: 0;
   overflow: hidden;
   background-color: #e68805;
-  /* background-color: #fa6a74; */
 `;
 
 const Title = styled.h2`
@@ -56,7 +55,6 @@ const Title = styled.h2`
 
 const Animation = styled.div`
   background-color: #e68805;
-  /* background-color: #fa6a74; */
 `;
 
 const Cursor = ({ changeSlide }) => {
@@ -369,8 +367,6 @@ class CursorComponent {
     this.gradientParticles = {
       color1: "#bf4508",
       color2: "#e68805",
-      // color1: "#51080C",
-      // color2: "#FA6A74",
     };
   }
 
